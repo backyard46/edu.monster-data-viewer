@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterDataViewer_Complete", "MonsterDataViewer\MonsterDataViewer_Complete.csproj", "{7AFA9E5C-D9D6-4FD6-BA38-B6C71E1F4017}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterDataViewer_Complete", "MonsterDataViewer_Complete\MonsterDataViewer_Complete.csproj", "{7AFA9E5C-D9D6-4FD6-BA38-B6C71E1F4017}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
