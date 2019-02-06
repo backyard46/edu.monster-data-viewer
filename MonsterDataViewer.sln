@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterDataViewer", "MonsterDataViewer\MonsterDataViewer.csproj", "{7AFA9E5C-D9D6-4FD6-BA38-B6C71E1F4017}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2050
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterDataViewer_Complete", "MonsterDataViewer\MonsterDataViewer_Complete.csproj", "{7AFA9E5C-D9D6-4FD6-BA38-B6C71E1F4017}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {488ED7D6-E3C9-46D2-985A-70F60E8009D2}
 	EndGlobalSection
 EndGlobal
