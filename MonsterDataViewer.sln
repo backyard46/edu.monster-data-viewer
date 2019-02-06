@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterDataViewer_Complete", "MonsterDataViewer_Complete\MonsterDataViewer_Complete.csproj", "{7AFA9E5C-D9D6-4FD6-BA38-B6C71E1F4017}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterDataViewer", "MonsterDataViewer\MonsterDataViewer.csproj", "{3CEA941D-E035-491A-8FEC-B66F8C77DAB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,6 +17,10 @@ Global
 		{7AFA9E5C-D9D6-4FD6-BA38-B6C71E1F4017}.Debug|x86.Build.0 = Debug|x86
 		{7AFA9E5C-D9D6-4FD6-BA38-B6C71E1F4017}.Release|x86.ActiveCfg = Release|x86
 		{7AFA9E5C-D9D6-4FD6-BA38-B6C71E1F4017}.Release|x86.Build.0 = Release|x86
+		{3CEA941D-E035-491A-8FEC-B66F8C77DAB4}.Debug|x86.ActiveCfg = Debug|x86
+		{3CEA941D-E035-491A-8FEC-B66F8C77DAB4}.Debug|x86.Build.0 = Debug|x86
+		{3CEA941D-E035-491A-8FEC-B66F8C77DAB4}.Release|x86.ActiveCfg = Release|x86
+		{3CEA941D-E035-491A-8FEC-B66F8C77DAB4}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
