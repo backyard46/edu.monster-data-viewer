@@ -87,7 +87,7 @@ namespace MonsterDataViewer
             if (searchKey.Trim().Length != 0)
             {
                 // SQLインジェクション未対策処理(文字列直結)
-                query += "WHERE Type1='" + searchKey + "' OR Type2='" + searchKey + "'";
+                query += "WHERE Type1=N'" + searchKey + "' OR Type2=N'" + searchKey + "'";
             }
 
             string connectionString = "Data Source=SIGMA-WSV009;Initial Catalog=koushi;User ID=koushi_admin;Password=koushi_admin";
