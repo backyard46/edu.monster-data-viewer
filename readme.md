@@ -8,7 +8,7 @@ ITSS準拠の研修カリキュラム「セキュリティ基礎（B241）」の
 - 研修環境からアクセス可能なSQL Serverに、「Database」ディレクトリにある下記のSQL 2件でテーブルとデータを作成してください。
   - TableCreate.sql …… Monstersテーブルを生成するCreate文です。
   - DataInsert.sql …… Monstersテーブルにポケモンデータを登録するInsert文です。
-- MonsterViewer.cs / SimpleSearchの「connectionString」変数に接続先サーバー情報が記述されているので、用意した環境のサーバー、DB名、ID、パスワードに書き換え手ください。
+- MonsterViewer.cs / SimpleSearchの「connectionString」変数に接続先サーバー情報が記述されているので、用意した環境のサーバー、DB名、ID、パスワードに書き換えてください。
 - 同じく、Properties / Settings.settings にある接続先情報も書き換えてください。
 
 ## 課題1: SQLインジェクションでデータを追加する
