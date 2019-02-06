@@ -17,7 +17,6 @@ namespace MonsterDataViewer
             InitializeComponent();
         }
 
-
         /// <summary>
         /// 閉じるボタン押下時処理。
         /// </summary>
@@ -28,60 +27,75 @@ namespace MonsterDataViewer
             this.Close();
         }
 
-
         /// <summary>
-        /// 表示押下時処理。
+        /// 表示押下時処理（TableAdapter利用）。
         /// </summary>
-        /// <remarks>
-        /// TableAdapterを使ってパラメーターによる条件指定を用いたSQLでデータを取得しているため、
-        /// SQLインジェクションは起こらない。
-        /// </remarks>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void buttonShow_Click(object sender, EventArgs e)
         {
-            if (textCondition.Text.Trim().Length == 0)
+            TableAdapterSearch(textCondition.Text);
+        }
+
+        /// <summary>
+        /// 表示（ダメ）押下時処理。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonShowDame_Click(object sender, EventArgs e)
+        {
+            // テキストボックスの文字列を条件にして検索実行
+            SimpleSearch(textCondition.Text);
+        }
+
+        /// <summary>
+        /// 指定された文字列を検索キーワードにして、TableAdapterを利用してデータベースからデータを取得、表示する。
+        /// 
+        /// TableAdapterを使ってパラメーターによる条件指定を用いたSQLでデータを取得しているため、
+        /// SQLインジェクションは起こらない。
+        /// </summary>
+        /// <param name="searchKey">検索条件文字列。</param>
+        private void TableAdapterSearch(string searchKey)
+        {
+            if (searchKey.Trim().Length == 0)
             {
+                // 条件が空の場合
                 monsterTblAdapter.Fill(monsterDataSet.Monsters);
                 gridMain.DataSource = monsterDataSet.Monsters;
             }
             else
             {
-                monsterTblAdapter.FillByTypes(monsterDataSet.Monsters, textCondition.Text, textCondition.Text);
+                // 条件が指定されている場合
+                monsterTblAdapter.FillByTypes(monsterDataSet.Monsters, searchKey, searchKey);
                 gridMain.DataSource = monsterDataSet.Monsters;
             }
-            
         }
 
-
         /// <summary>
-        /// 表示（ダメ）押下時処理。
-        /// </summary>
-        /// <remarks>
+        /// 指定された文字列を検索キーワードにして単純な文字列結合でSQLを作成、データベースからデータを取得し、表示する。
+        /// 
         /// SqlAdapterとSqlCommandで、SQLを文字列組み立てで作成している。
         /// パラメーターによる条件指定を行っていないので、SQLインジェクションが起こる。
         /// たとえば
         /// 　　「' OR 1=1; insert into monsters values(231,'謎モンスター','Riddle','なぞ',null,null,null); SELECT * FROM Monsters Where Type1='」
         /// を打ち込むと、エラーにはなるが新データは追加される。
-        /// </remarks>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonShowDame_Click(object sender, EventArgs e)
+        /// </summary>
+        /// <param name="searchKey">検索条件文字列。</param>
+        private void SimpleSearch(string searchKey)
         {
             string query = "SELECT * FROM Monsters ";
-            if (textCondition.Text.Trim().Length != 0)
+            if (searchKey.Trim().Length != 0)
             {
                 // SQLインジェクション対策処理(単純置換)
-                //string sanitizedText = textCondition.Text.Replace("'", "''");
+                //string sanitizedText = searchKey.Replace("'", "''");
                 //query += "WHERE Type1='" + sanitizedText + "' OR Type2='" + sanitizedText + "'";
 
                 // SQLインジェクション未対策処理(文字列直結)
-                //query += "WHERE Type1='" + textCondition.Text + "' OR Type2='" + textCondition.Text + "'";
+                //query += "WHERE Type1='" + searchKey + "' OR Type2='" + searchKey + "'";
 
                 // SQLインジェクション対策処理(単純置換)+Unicode検索条件対策(Nプリフィックス)
-                string sanitizedText = textCondition.Text.Replace("'", "''");
+                string sanitizedText = searchKey.Replace("'", "''");
                 query += "WHERE Type1=N'" + sanitizedText + "' OR Type2=N'" + sanitizedText + "'";
-
             }
 
             string connectionString = "Data Source=SIGMA-WSV009;Initial Catalog=koushi;User ID=koushi_admin;Password=koushi_admin";
@@ -93,12 +107,6 @@ namespace MonsterDataViewer
                 command.Connection = con;
                 command.CommandText = query;
                 adapter.SelectCommand = command;
-
-                con.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                reader.Read();
-
                 try
                 {
                     adapter.Fill(ds);
