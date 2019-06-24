@@ -77,8 +77,9 @@ namespace MonsterDataViewer
         /// SqlAdapterとSqlCommandで、SQLを文字列組み立てで作成している。
         /// パラメーターによる条件指定を行っていないので、SQLインジェクションが起こる。
         /// たとえば
-        /// 　　「' OR 1=1; insert into monsters values(231,'謎モンスター','Riddle','なぞ',null,null,null); SELECT * FROM Monsters Where Type1='」
-        /// を打ち込むと、エラーにはなるが新データは追加される。
+        /// 　　「' OR 1=1; insert into monsters values(231,'謎モンスター','Riddle','なぞ',null,null,null);--」
+        /// 　　「'; insert into monsters values(231,'謎モンスター','Riddle','なぞ',null,null,null);--」
+        /// を打ち込むと新データが追加される。
         /// </summary>
         /// <param name="searchKey">検索条件文字列。</param>
         private void SimpleSearch(string searchKey)
