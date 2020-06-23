@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panelTop = new System.Windows.Forms.Panel();
+            this.buttonShowDame = new System.Windows.Forms.Button();
             this.buttonShow = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textCondition = new System.Windows.Forms.TextBox();
             this.panelBottom = new System.Windows.Forms.Panel();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.gridMain = new System.Windows.Forms.DataGridView();
             this.monsterDataSet = new MonsterDataViewer.MonsterInfoDataSet();
             this.monsterTblAdapter = new MonsterDataViewer.MonsterInfoDataSetTableAdapters.MonstersTableAdapter();
-            this.buttonShowDame = new System.Windows.Forms.Button();
-            this.buttonClear = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             this.panelBottom.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -58,6 +58,17 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(800, 56);
             this.panelTop.TabIndex = 0;
+            // 
+            // buttonShowDame
+            // 
+            this.buttonShowDame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonShowDame.Location = new System.Drawing.Point(664, 8);
+            this.buttonShowDame.Name = "buttonShowDame";
+            this.buttonShowDame.Size = new System.Drawing.Size(120, 40);
+            this.buttonShowDame.TabIndex = 3;
+            this.buttonShowDame.Text = "表示（ダメ）";
+            this.buttonShowDame.UseVisualStyleBackColor = true;
+            this.buttonShowDame.Click += new System.EventHandler(this.buttonShowDame_Click);
             // 
             // buttonShow
             // 
@@ -98,6 +109,17 @@
             this.panelBottom.Size = new System.Drawing.Size(800, 56);
             this.panelBottom.TabIndex = 1;
             // 
+            // buttonClear
+            // 
+            this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonClear.Location = new System.Drawing.Point(16, 8);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(120, 40);
+            this.buttonClear.TabIndex = 0;
+            this.buttonClear.Text = "クリア";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // buttonClose
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -128,6 +150,7 @@
             this.gridMain.Name = "gridMain";
             this.gridMain.ReadOnly = true;
             this.gridMain.RowTemplate.Height = 21;
+            this.gridMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridMain.Size = new System.Drawing.Size(800, 296);
             this.gridMain.TabIndex = 0;
             // 
@@ -139,28 +162,6 @@
             // monsterTblAdapter
             // 
             this.monsterTblAdapter.ClearBeforeFill = true;
-            // 
-            // buttonShowDame
-            // 
-            this.buttonShowDame.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonShowDame.Location = new System.Drawing.Point(664, 8);
-            this.buttonShowDame.Name = "buttonShowDame";
-            this.buttonShowDame.Size = new System.Drawing.Size(120, 40);
-            this.buttonShowDame.TabIndex = 3;
-            this.buttonShowDame.Text = "表示（ダメ）";
-            this.buttonShowDame.UseVisualStyleBackColor = true;
-            this.buttonShowDame.Click += new System.EventHandler(this.buttonShowDame_Click);
-            // 
-            // buttonClear
-            // 
-            this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonClear.Location = new System.Drawing.Point(16, 8);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(120, 40);
-            this.buttonClear.TabIndex = 0;
-            this.buttonClear.Text = "クリア";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // MonsterViewer
             // 
