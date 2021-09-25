@@ -98,7 +98,7 @@ namespace MonsterDataViewer
                 query += "WHERE Type1=N'" + sanitizedText + "' OR Type2=N'" + sanitizedText + "'";
             }
 
-            string connectionString = "Data Source=SIGMA-WSV009;Initial Catalog=koushi;User ID=koushi_admin;Password=koushi_admin";
+            string connectionString = "Data Source=WSV009;Initial Catalog=koushi;User ID=koushi_admin;Password=koushi_admin";
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand();
             DataSet ds = new DataSet();
